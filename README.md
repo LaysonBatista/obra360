@@ -82,9 +82,3 @@ Sistema web para acompanhamento e transparência de obras, com acesso para clien
 - Evoluir a camada POO (Services/Domain) e padronizar redirecionamentos pós-login.
 - Introduzir variáveis de ambiente (`.env`) e remover configs hardcoded.
 - Adicionar testes automatizados (ex.: `phpunit`).
-
-## Licença
-- Uso acadêmico; licença a definir conforme necessidade.
-
-## Observação
-- O nome do projeto é sempre “Obra360”. Ajuste a URL conforme o nome da pasta local, se necessário.
