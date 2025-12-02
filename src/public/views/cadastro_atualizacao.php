@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
-    <link rel="shortcut icon" href="../public/images/favicon.ico" type="images/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="images/x-icon">
 
-    <link rel="stylesheet" href="./style/cadastro_atualizacao.css">
+    <link rel="stylesheet" href="../style/cadastro_atualizacao.css">
   </head>
   <body>
 
@@ -45,7 +45,7 @@
         </div>
 
       <div class="img-container">
-             <img src="images\logo.png" alt="">    
+             <img src="../images/obra360.png" alt="">    
       </div>
 
     </div>

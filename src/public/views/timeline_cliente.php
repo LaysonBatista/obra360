@@ -111,12 +111,10 @@ $obras = $query2->fetchAll();
   </section>
 
   <footer class="page-footer">
-    <a href="../images/qrcode.png" target="_blank">
-      <img class="qrcode" src="../images/qrcode.png" alt="Obra 360">
-    </a>
+   
   </footer>
 
-  <script src="../script/timeline.js"></script>
+  <script src="../js/timeline.js"></script>
 </body>
 
 </html>

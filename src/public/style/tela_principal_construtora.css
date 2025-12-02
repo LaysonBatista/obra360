@@ -165,7 +165,7 @@ form.example::after {
 
 .div-obra1 {
   width: 20%;
-  height: 25%;
+  height: 40%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -185,7 +185,7 @@ form.example::after {
 
 .div-obra2 {
   width: 20%;
-  height: 25%;
+  height: 35%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -205,7 +205,7 @@ form.example::after {
 
 .div-obra3 {
   width: 20%;
-  height: 25%;
+  height: 35%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -224,7 +224,7 @@ form.example::after {
 
 .div-obra4 {
   width: 20%;
-  height: 25%;
+  height: 35%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -243,7 +243,7 @@ form.example::after {
 
 .div-obra5 {
   width: 20%;
-  height: 25%;
+  height: 35%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -263,7 +263,7 @@ form.example::after {
 
 .div-obra6 {
   width: 20%;
-  height: 25%;
+  height: 35%;
   background-color: #0f2f4b;
   border-radius: 10px;
   position: absolute;
@@ -375,7 +375,7 @@ img[src="../image/obra360.png"]:hover {
 
   .div-obra1 {
     width: 20%;
-    height: 30%;
+    height: 35%;
     background-color: #0f2f4b;
     border-radius: 10px;
     position: absolute;

@@ -11,13 +11,13 @@ body {
 
 .form-container {
   display: inline-block;
-  background-color: #f0f0f0; /* Cor de fundo do formulário */
+  background-color: #ededed; /* Cor de fundo do formulário */
   padding: 20px;
   border-radius: 10px 0px 0px 10px;
   width: 100%; /* Ajuste a largura conforme necessário */
   max-width: 50%; /* Defina a largura máxima */
   box-sizing: border-box;
-  height: 50vh;
+  height: 65vh;
 }
 
 h2 {
@@ -93,7 +93,7 @@ img{
 }
 
 .img-container {
-  background-color: #f0f0f0; /* Cor de fundo do formulário */
+  background-color: #cfcece; /* Cor de fundo do formulário */
   padding: 20px;
   width: 100%; /* Ajuste a largura conforme necessário */
   max-width: 50%; /* Defina a largura máxima */
@@ -101,7 +101,7 @@ img{
   display: flex;
   float: right;
   border-radius: 0px 10px 10px 0px;
-  height: 50vh;
+  height: 65vh;
   text-align: center;
 }
 

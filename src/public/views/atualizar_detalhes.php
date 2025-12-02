@@ -70,7 +70,7 @@ if (!isset($_GET['idObra'])) {
         </div>
 
         <div class="img-container">
-            <img src="../public/images/obra360.png" alt="">
+            <img src="../images/obra360.png" alt="">
         </div>
 
     </div>

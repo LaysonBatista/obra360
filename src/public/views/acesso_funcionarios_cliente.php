@@ -26,9 +26,9 @@ $obras = $query2->fetchAll();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="..public/style/funcionarios.css">
+  <link rel="stylesheet" href="../style/funcionarios.css">
   <title>Detalhes de funcionários</title>
-  <link rel="shortcut icon" href="../public/images/favicon.ico" type="images/x-icon">
+  <link rel="shortcut icon" href="../images/favicon.ico" type="images/x-icon">
 
 </head>
 
@@ -38,7 +38,7 @@ $obras = $query2->fetchAll();
       <div class="page">
         <nav class="page__menu menu">
           <ul class="menu__list r-list">
-            <li class="menu__logo"><img src="../public/images/obra360.png" alt="logo_obra_360"></li>
+            <li class="menu__logo"><img src="../images/obra360.png" alt="logo_obra_360"></li>
             <li class="menu__group">
               <?php
               foreach ($obras as $obra) {

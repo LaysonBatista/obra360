@@ -20,7 +20,7 @@
                     <p class="branco">Escolha uma das opcções para login.</p>
 
                     <div class="btns-login">
-                        <a class="btn btn-secondary btn-funcionario azul" href="tela_login_construtora.php">CONSTRUTORA</a>
+                        <a class="btn btn-secondary btn-funcionario azul" href="tela_login_construtora.php">CONSTRUTOR</a>
                         <a class="btn btn-secondary btn-cliente laranja" href="tela_login_cliente.php">CLIENTE</a>
                     </div>
                 </div>

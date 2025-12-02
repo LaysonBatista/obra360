@@ -17,7 +17,7 @@ body {
     width: 100%; /* Ajuste a largura conforme necessário */
     max-width: 50%; /* Defina a largura máxima */
     box-sizing: border-box;
-    height: 67vh;
+    height: 88vh;
     box-shadow: rgb(178, 75, 56) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: background-color 0.5s ease;
   }
@@ -29,7 +29,7 @@ body {
     width: 100%; /* Ajuste a largura conforme necessário */
     max-width: 50%; /* Defina a largura máxima */
     box-sizing: border-box;
-    height: 67vh;
+    height: 88vh;
     box-shadow: rgb(209, 77, 54) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: background-color 0.5s ease;
   }
