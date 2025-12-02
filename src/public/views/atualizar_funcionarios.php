@@ -1,6 +1,6 @@
 <?php
 //print_r($_GET);
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 
 $id_funcionario;
 
@@ -9,7 +9,7 @@ if (!isset($_GET['id_funcionario'])) {
     die();
 } else {
     $id_funcionario = $_GET['id_funcionario'];
-    $query = $dbh->prepare('SELECT * FROM funcionarios WHERE id_funcionario=:id_funcionario');
+    $query = $pdo->prepare('SELECT * FROM funcionarios WHERE id_funcionario=:id_funcionario');
 
     $query->execute(array(
         ':id_funcionario' => $id_funcionario
@@ -29,7 +29,7 @@ if (!isset($_GET['id_funcionario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Cadastro</title>
-    <link rel="shortcut icon" href="../images/favicon.ico" type="images/x-icon">
+    <link rel="shortcut icon" href="../public/images/favicon.ico" type="images/x-icon">
 
     <link rel="stylesheet" href="../style/cadastro_funcionarios.css">
 </head>
@@ -64,7 +64,7 @@ if (!isset($_GET['id_funcionario'])) {
         </div>
 
         <div class="img-container">
-            <img class="suaClasse" src="../images/obra360.png" alt="">
+            <img class="suaClasse" src="../public/images/obra360.png" alt="">
         </div>
 
     </div>

@@ -1,5 +1,5 @@
 <?php
-    include('../database/conexao.php');
+    require_once __DIR__ . '/../../app/bootstrap.php';
     
 if (isset($_POST['nome_funcionario'], $_POST['cargo_funcionario']) && $_POST['nome_funcionario'] != '') {
     $nome_funcionario = $_POST['nome_funcionario'];
@@ -12,7 +12,7 @@ if (isset($_POST['nome_funcionario'], $_POST['cargo_funcionario']) && $_POST['no
 }
 
 try {
-    $query = $dbh->prepare('UPDATE funcionarios SET nome_funcionario=:nome_funcionario,
+    $query = $pdo->prepare('UPDATE funcionarios SET nome_funcionario=:nome_funcionario,
      cargo_funcionario=:cargo_funcionario WHERE id_funcionario=:id_funcionario;');
 
     $query->execute(array(

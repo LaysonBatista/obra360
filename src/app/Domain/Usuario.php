@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Interfaces/Autenticavel.php';
+require_once __DIR__ . '../../Interfaces/Autenticavel.php';
 
 abstract class Usuario implements Autenticavel {
     protected $email;

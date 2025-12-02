@@ -1,5 +1,5 @@
 <?php
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 if (isset($_POST['nome_funcionario'], $_POST['cargo_funcionario']) && $_POST['nome_funcionario'] != '') {
   $nome_funcionario = $_POST['nome_funcionario'];
   $cargo_funcionario = $_POST['cargo_funcionario'];  
@@ -8,7 +8,7 @@ if (isset($_POST['nome_funcionario'], $_POST['cargo_funcionario']) && $_POST['no
   die();
 }
 try {
-  $query = $dbh->prepare('INSERT INTO funcionarios (nome_funcionario, cargo_funcionario) VALUES(:nome_funcionario, :cargo_funcionario);');
+  $query = $pdo->prepare('INSERT INTO funcionarios (nome_funcionario, cargo_funcionario) VALUES(:nome_funcionario, :cargo_funcionario);');
 
   $query->execute(array(
     ':nome_funcionario' => $nome_funcionario,

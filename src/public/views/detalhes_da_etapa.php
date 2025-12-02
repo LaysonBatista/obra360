@@ -1,16 +1,16 @@
 <?php
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 
 // Função para processar a exclusão da etapa
-function excluirEtapa($dbh, $etapaId) {
-    $query = $dbh->prepare('DELETE FROM detalhes_etapa WHERE id_etapa = :id');
+function excluirEtapa($pdo, $etapaId) {
+    $query = $pdo->prepare('DELETE FROM detalhes_etapa WHERE id_etapa = :id');
     $query->bindParam(':id', $etapaId, PDO::PARAM_INT);
     return $query->execute();
 }
 
 // Função para processar a atualização da etapa
-function atualizarEtapa($dbh, $etapaId, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade) {
-    $query = $dbh->prepare('UPDATE detalhes_etapa SET nome_etapa = :nome, descricao_etapa = :descricao, caminho_foto = :imagem, duracao = :duracao, periodicidade_atualizacao = :periodicidade WHERE id_etapa = :id');
+function atualizarEtapa($pdo, $etapaId, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade) {
+    $query = $pdo->prepare('UPDATE detalhes_etapa SET nome_etapa = :nome, descricao_etapa = :descricao, caminho_foto = :imagem, duracao = :duracao, periodicidade_atualizacao = :periodicidade WHERE id_etapa = :id');
     $query->bindParam(':id', $etapaId, PDO::PARAM_INT);
     $query->bindParam(':nome', $novoNome, PDO::PARAM_STR);
     $query->bindParam(':descricao', $novaDescricao, PDO::PARAM_STR);
@@ -21,8 +21,8 @@ function atualizarEtapa($dbh, $etapaId, $novoNome, $novaDescricao, $novaImagem, 
 }
 
 // Função para processar a inserção de uma nova etapa
-function criarEtapa($dbh, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade) {
-    $query = $dbh->prepare('INSERT INTO detalhes_etapa (nome_etapa, descricao_etapa, caminho_foto, duracao, periodicidade_atualizacao) VALUES (:nome, :descricao, :imagem, :duracao, :periodicidade)');
+function criarEtapa($pdo, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade) {
+    $query = $pdo->prepare('INSERT INTO detalhes_etapa (nome_etapa, descricao_etapa, caminho_foto, duracao, periodicidade_atualizacao) VALUES (:nome, :descricao, :imagem, :duracao, :periodicidade)');
     $query->bindParam(':nome', $novoNome, PDO::PARAM_STR);
     $query->bindParam(':descricao', $novaDescricao, PDO::PARAM_STR);
     $query->bindParam(':imagem', $novaImagem, PDO::PARAM_STR);
@@ -35,7 +35,7 @@ function criarEtapa($dbh, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['excluir_etapa'])) {
         $etapaId = $_POST['etapa_id'];
-        excluirEtapa($dbh, $etapaId);
+        excluirEtapa($pdo, $etapaId);
     } elseif (isset($_POST['confirmar_edicao'])) {
         $etapaId = $_POST['etapa_id'];
         $novoNome = $_POST['novo_nome'];
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $novoDuracao = $_POST['novo_duracao'];  // Adicionado
         $novaPeriodicidade = $_POST['nova_periodicidade'];  // Adicionado
 
-        atualizarEtapa($dbh, $etapaId, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade);
+        atualizarEtapa($pdo, $etapaId, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade);
     } elseif (isset($_POST['criar_etapa'])) {
         $novoNome = $_POST['novo_nome'];
         $novaDescricao = $_POST['nova_descricao'];
@@ -52,11 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $novoDuracao = $_POST['novo_duracao'];
         $novaPeriodicidade = $_POST['nova_periodicidade'];
 
-        criarEtapa($dbh, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade);
+        criarEtapa($pdo, $novoNome, $novaDescricao, $novaImagem, $novoDuracao, $novaPeriodicidade);
     }
 }
 
-$query = $dbh->prepare('SELECT * FROM detalhes_etapa');
+$query = $pdo->prepare('SELECT * FROM detalhes_etapa');
 $query->execute();
 $etapas = $query->fetchAll();
 ?>
@@ -221,7 +221,7 @@ $etapas = $query->fetchAll();
 </script>
 
 
-    <script src="../script/detalhes_da_etapa.js"></script>
+    <script src="../js/detalhes_da_etapa.js"></script>
   </body>
 </html>
 

@@ -1,5 +1,5 @@
 <?php
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 if (isset($_POST['nome_cliente'], $_POST['cpf_cliente'], $_POST['telefone_cliente'], $_POST['email_cliente'], $_POST['senha_cliente']) && $_POST['email_cliente'] != '') {
   $nome_cliente = $_POST['nome_cliente'];
   $cpf_cliente = $_POST['cpf_cliente'];
@@ -12,7 +12,7 @@ if (isset($_POST['nome_cliente'], $_POST['cpf_cliente'], $_POST['telefone_client
   die();
 }
 try {
-  $query = $dbh->prepare('INSERT INTO clientes (nome_cliente, cpf_cliente, telefone_cliente, email_cliente, senha_cliente) VALUES(:nome_cliente, :cpf_cliente, :telefone_cliente, :email_cliente, :senha_cliente);');
+  $query = $pdo->prepare('INSERT INTO clientes (nome_cliente, cpf_cliente, telefone_cliente, email_cliente, senha_cliente) VALUES(:nome_cliente, :cpf_cliente, :telefone_cliente, :email_cliente, :senha_cliente);');
 
   $query->execute(array(
     ':nome_cliente' => $nome_cliente,

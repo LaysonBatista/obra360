@@ -1,6 +1,6 @@
 <?php
-include('../database/conexao.php');
-$query = $dbh->prepare('SELECT id_funcionario, nome_funcionario, cargo_funcionario FROM funcionarios;');
+require_once __DIR__ . '/../../app/bootstrap.php';
+$query = $pdo->prepare('SELECT id_funcionario, nome_funcionario, cargo_funcionario FROM funcionarios;');
 
 $query->execute();
 
@@ -12,7 +12,7 @@ $funcionarios = $query->fetchAll();
 
 $obraE = $_GET['idObra'];
 
-$query2 = $dbh->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
+$query2 = $pdo->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
 
 $query2->execute(array(':id_obra' => $obraE));
 
@@ -28,7 +28,7 @@ $obras = $query2->fetchAll();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="..public/style/funcionarios.css">
   <title>Detalhes de funcionários</title>
-  <link rel="shortcut icon" href="..public/images/favicon.ico" type="images/x-icon">
+  <link rel="shortcut icon" href="../public/images/favicon.ico" type="images/x-icon">
 
 </head>
 
@@ -38,7 +38,7 @@ $obras = $query2->fetchAll();
       <div class="page">
         <nav class="page__menu menu">
           <ul class="menu__list r-list">
-            <li class="menu__logo"><img src="../images/obra360.png" alt="logo_obra_360"></li>
+            <li class="menu__logo"><img src="../public/images/obra360.png" alt="logo_obra_360"></li>
             <li class="menu__group">
               <?php
               foreach ($obras as $obra) {

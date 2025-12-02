@@ -1,5 +1,5 @@
 <?php
-    include('../database/conexao.php');
+    require_once __DIR__ . '/../../app/bootstrap.php';
     
 if (isset($_POST['nome_obra'], $_POST['descricao_obra'], $_POST['endereco_obra']) && $_POST['nome_obra'] != '') {
     $nome_obra = $_POST['nome_obra'];
@@ -13,7 +13,7 @@ if (isset($_POST['nome_obra'], $_POST['descricao_obra'], $_POST['endereco_obra']
 }
 
 try {
-    $query = $dbh->prepare('UPDATE obras SET nome_obra=:nome_obra,
+    $query = $pdo->prepare('UPDATE obras SET nome_obra=:nome_obra,
      descricao_obra=:descricao_obra, endereco_obra=:endereco_obra 
      WHERE id_obra=:idObra;');
 

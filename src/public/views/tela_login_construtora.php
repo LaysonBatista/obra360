@@ -32,7 +32,7 @@
 
                 <div class="login-box">
                     
-                    <form action="../database/validarLogin_construtora.php" method="post">
+                    <form action="../../database/validarLogin_construtora.php" method="post">
                         <div class="user-box">
                             <input id="inputEmail" type="text" name="email_func_const" required="">
                             <label>email</label>

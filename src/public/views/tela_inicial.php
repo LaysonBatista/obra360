@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>obra360</title>
-        <link rel="shortcut icon" href="../images/favicon.ico" type="images/x-icon">
+        <link rel="shortcut icon" href="../public/images/favicon.ico" type="images/x-icon">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="../style/tela_inicial.css">
@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="container d-flex justify-content-center align-items-center" style="height: 90vh;">
                         <div class="flex-container">
-                            <img class="logo-tela-ini" src="../images/obra360.png" alt="Logo do Obra360" width="300" height="300">
+                            <img class="logo-tela-ini" src="../../public/images/obra360.png" alt="Logo do Obra360" width="300" height="300">
                             <h1 class="branco">Bem-vindo(a) ao Obra360!</h1>         
                             <a type="submit" id="submit" href="./tela_login_construtora.php">Acessar</a>
                         </div>

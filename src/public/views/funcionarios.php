@@ -1,6 +1,6 @@
 <?php
-include('../database/conexao.php');
-$query = $dbh->prepare('SELECT id_funcionario, nome_funcionario, cargo_funcionario FROM funcionarios;');
+require_once __DIR__ . '/../../app/bootstrap.php';
+$query = $pdo->prepare('SELECT id_funcionario, nome_funcionario, cargo_funcionario FROM funcionarios;');
 
 $query->execute();
 
@@ -12,7 +12,7 @@ $funcionarios = $query->fetchAll();
 
 $obraE = $_GET['idObra'];
 
-$query2 = $dbh->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
+$query2 = $pdo->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
 
 $query2->execute(array(':id_obra' => $obraE));
 

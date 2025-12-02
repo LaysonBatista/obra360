@@ -1,6 +1,6 @@
 <?php
 //print_r($_GET);
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 
 $idObra;
 
@@ -9,7 +9,7 @@ if (!isset($_GET['idObra'])) {
     die();
 } else {
     $idObra = $_GET['idObra'];
-    $query = $dbh->prepare('SELECT * FROM obras WHERE id_obra=:idObra');
+    $query = $pdo->prepare('SELECT * FROM obras WHERE id_obra=:idObra');
 
     $query->execute(array(
         ':idObra' => $idObra
@@ -70,7 +70,7 @@ if (!isset($_GET['idObra'])) {
         </div>
 
         <div class="img-container">
-            <img src="../images/obra360.png" alt="">
+            <img src="../public/images/obra360.png" alt="">
         </div>
 
     </div>

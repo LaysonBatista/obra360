@@ -1,6 +1,6 @@
 <?php
     //print_r($_GET);
-    include('../database/conexao.php');
+    require_once __DIR__ . '/../../app/bootstrap.php';
     if(isset($_GET['idObra'])){
         $idObra = $_GET['idObra'];
     }else{
@@ -9,7 +9,7 @@
     }
 
     try{
-        $query = $dbh->prepare('DELETE FROM obras WHERE id_obra=:idObra;');
+        $query = $pdo->prepare('DELETE FROM obras WHERE id_obra=:idObra;');
 
         $query->execute(array(
             ':idObra' => $idObra)

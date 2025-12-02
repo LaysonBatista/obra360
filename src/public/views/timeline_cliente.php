@@ -1,7 +1,7 @@
 <?php
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 
-$query = $dbh->prepare('SELECT * FROM etapas;');
+$query = $pdo->prepare('SELECT * FROM etapas;');
 $query->execute();
 $etapas = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -11,7 +11,7 @@ $etapas = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $obraE = $_GET['idObra'];
 
-$query2 = $dbh->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
+$query2 = $pdo->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra FROM obras WHERE id_obra =:id_obra');
 
 $query2->execute(array(':id_obra' => $obraE));
 

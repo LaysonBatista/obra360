@@ -7,7 +7,7 @@ class FuncionarioConstrutora extends Usuario {
     }
 
     public function homePath() {
-        return '../../content/tela_principal_construtora.php';
+        return '../public/views/tela_principal_construtora.php';
     }
 }
 ?>

@@ -117,6 +117,6 @@
       </ion-view>
     </script>
 
-    <script src="../script/tela_mensagem.js"></script>
+    <script src="../js/tela_mensagem.js"></script>
   </body>
 </html>

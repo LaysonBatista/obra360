@@ -7,7 +7,7 @@ class Cliente extends Usuario {
     }
 
     public function homePath() {
-        return '../../content/tela_principal_cliente.php';
+        return '../public/views/tela_principal_cliente.php';
     }
 }
 ?>

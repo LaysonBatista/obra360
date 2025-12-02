@@ -1,7 +1,7 @@
 <?php
-include('../database/conexao.php');
+require_once __DIR__ . '/../../app/bootstrap.php';
 
-$query = $dbh->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra 
+$query = $pdo->prepare('SELECT id_obra, nome_obra, descricao_obra, endereco_obra 
     FROM obras;');
 
 $query->execute();
@@ -10,7 +10,7 @@ $obras = $query->fetchAll();
 
 
 
-$query2 = $dbh->prepare('SELECT id_obra FROM obras GROUP BY id_obra;');
+$query2 = $pdo->prepare('SELECT id_obra FROM obras GROUP BY id_obra;');
 $query2->execute();
 
 $totalObras = $query2->fetchAll();
@@ -57,11 +57,11 @@ $totalObras = $query2->fetchAll();
         <!-------- Menu lateral --------->
 
         <ul class="side-menu">
-            <li><a href=""><span class="fa fa-code"><img class="menu-img" src="../images/menu-branco.png" alt="menu barra"></span>Obra 360</a></li>
-            <li><a href="sobre_nos.php"><span class="fa fa-cog"><img class="menu-info" src="../images/info-branco.png" alt="incone informacao"></span>Sobre nós</a></li>
-            <li><a href="../content/cadastro_clientes.php"><span class="fa fa-font"><img class="menu-cadastro" src="../images/cadastro-branco.png" alt="incone cadastro"></span>Cadastrar Cliente</a></li>
-            <li><a href="../content/cadastro_funcionarios.php"><span class="fa fa-font"><img class="menu-cadastro" src="../images/icon-funcionario.png" alt="incone cadastro"></span>Cadastrar Funcionarios</a></li>
-            <li><a id="logout" href="tela_login_construtora.php"><span class="fa fa-check-square"><img class="menu-info" src="../images/sair-branco.png" alt="incone informacao"></span>Sair</a></li>
+            <li><a href=""><span class="fa fa-code"><img class="menu-img" src="../../public/images/menu-branco.png" alt="menu barra"></span>Obra 360</a></li>
+            <li><a href="sobre_nos.php"><span class="fa fa-cog"><img class="menu-info" src="../../public/images/info-branco.png" alt="incone informacao"></span>Sobre nós</a></li>
+            <li><a href="../views/cadastro_clientes.php"><span class="fa fa-font"><img class="menu-cadastro" src="../../public/images/cadastro-branco.png" alt="incone cadastro"></span>Cadastrar Cliente</a></li>
+            <li><a href="../views/cadastro_funcionarios.php"><span class="fa fa-font"><img class="menu-cadastro" src="../../public/images/icon-funcionario.png" alt="incone cadastro"></span>Cadastrar Funcionarios</a></li>
+            <li><a id="logout" href="tela_login_construtora.php"><span class="fa fa-check-square"><img class="menu-info" src="../../public/images/sair-branco.png" alt="incone informacao"></span>Sair</a></li>
         </ul>
         <script>
             document.getElementById('logout').onclick = function() {
@@ -83,7 +83,7 @@ $totalObras = $query2->fetchAll();
     
     <div class="btns">
         <div class="div-add-obra">
-            <a href="cadastro_detalhes.php"><img class="add-obra suaClasse" src="../images/add-branco.png" alt="adicionar"></a>
+            <a href="cadastro_detalhes.php"><img class="add-obra suaClasse" src="../../public/images/add-branco.png" alt="adicionar"></a>
         </div>
     </div>
 
@@ -101,9 +101,9 @@ $totalObras = $query2->fetchAll();
 
             echo '<div class="div-obra' . $obra['id_obra'] . '">';
             echo '<div class="icons">';
-            echo '<bottom onclick="return alertarDelet();" href="delete_obra.php?idObra=' . $obra['id_obra'] . '"><img src="../images/icon-deletar-obra.png" alt="Ícone 1" class="icon"></bottom>';
+            echo '<bottom onclick="return alertarDelet();" href="delete_obra.php?idObra=' . $obra['id_obra'] . '"><img src="../../public/images/icon-deletar-obra.png" alt="Ícone 1" class="icon"></bottom>';
 
-            echo '<bottom onclick="return alertarEdit();" href="delete_obra.php?idObra=' . $obra['id_obra'] . '"><img src="../images/edit-obra.png" alt="Ícone 2" class="icon"></bottom>';
+            echo '<bottom onclick="return alertarEdit();" href="delete_obra.php?idObra=' . $obra['id_obra'] . '"><img src="../../public/images/edit-obra.png" alt="Ícone 2" class="icon"></bottom>';
             echo '</div>';
 
             echo '<h2 class="branco conteudo-div-obra">' . $obra['nome_obra'] . '</h2>';
@@ -164,13 +164,6 @@ $totalObras = $query2->fetchAll();
             return false; // Isso impede que o navegador siga o link
         }
     </script>
-
-
-
-
-
-
-
 
     <?php
 
