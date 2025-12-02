@@ -11,7 +11,7 @@ Sistema web para acompanhamento e transparência de obras, com acesso para clien
 ## Requisitos
 - XAMPP instalado com Apache e MySQL ativos
 - PHP habilitado no Apache
-- MySQL acessível (porta padrão usada: `3307`, ajustável)
+- MySQL acessível (porta padrão usada: `3306`, ajustável)
 
 ## Instalação e Setup
 1. Copie o projeto para `c:\xampp\htdocs\Obra360`.
@@ -21,7 +21,7 @@ Sistema web para acompanhamento e transparência de obras, com acesso para clien
    - Crie o banco `obra360` (se não existir).
    - Importe `src/database/db_obra360.sql`.
 4. (Opcional) Ajuste credenciais/porta em `src/database/conexao.php`:
-   - `dsn`: `mysql:dbname=obra360;host=127.0.0.1;port=3307`
+   - `dsn`: `mysql:dbname=obra360;host=127.0.0.1;port=3306`
    - `user`: `root`
    - `password`: `''` (vazio por padrão no XAMPP)
 
@@ -54,7 +54,7 @@ Sistema web para acompanhamento e transparência de obras, com acesso para clien
 
 ## Banco de Dados
 - Banco: `obra360`
-- DSN padrão: `mysql:dbname=obra360;host=127.0.0.1;port=3307`
+- DSN padrão: `mysql:dbname=obra360;host=127.0.0.1;port=3306`
 - Tabelas principais:
   - `clientes`, `construtora`, `funcionarios`, `funcionarios_construtora`
   - `obras`, `etapas`, `detalhes_etapa`, `atualizacoes`
@@ -66,7 +66,7 @@ Sistema web para acompanhamento e transparência de obras, com acesso para clien
 - Navegue até listagem de obras e etapas; valide exibição de detalhes.
 
 ## Problemas Comuns (Troubleshooting)
-- Porta do MySQL diferente de `3307`:
+- Porta do MySQL diferente de `3306`:
   - Edite `src/database/conexao.php` e ajuste `port` no DSN.
 - Credenciais do MySQL diferentes do padrão:
   - Atualize `user`/`password` em `conexao.php`.
